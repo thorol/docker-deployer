@@ -8,8 +8,9 @@ RUN apk update --no-cache \
     && apk add --no-cache \
         openssh-client
 
-RUN curl -L https://deployer.org/releases/v$DEPLOYER_VERSION/deployer.phar > /usr/local/bin/deployer \
-    && chmod +x /usr/local/bin/deployer
+RUN curl -LO https://deployer.org/deployer.phar \
+	&& mv deployer.phar /usr/local/bin/dep \
+	&& chmod +x /usr/local/bin/dep
 
 VOLUME ["/project", "$HOME/.ssh"]
 WORKDIR /project
