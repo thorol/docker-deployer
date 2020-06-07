@@ -4,9 +4,9 @@ LABEL maintainer="herloct <herloct@gmail.com>"
 
 ENV DEPLOYER_VERSION=6.3.0
 
-RUN apk update --no-cache \
-    && apk add --no-cache \
-        openssh-client
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y openssh-client
 
 RUN curl -LO https://deployer.org/deployer.phar \
 	&& mv deployer.phar /usr/local/bin/dep \
