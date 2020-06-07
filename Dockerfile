@@ -15,5 +15,5 @@ RUN curl -LO https://deployer.org/deployer.phar \
 VOLUME ["/project", "$HOME/.ssh"]
 WORKDIR /project
 
-ENTRYPOINT ["deployer"]
+ENTRYPOINT ["dep"]
 CMD ["--version"]
