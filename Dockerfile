@@ -1,8 +1,4 @@
-FROM php:7.4
-
-LABEL maintainer="herloct <herloct@gmail.com>"
-
-ENV DEPLOYER_VERSION=6.3.0
+FROM php:7.4-fpm
 
 RUN apt-get update && \
     apt-get upgrade -y && \
