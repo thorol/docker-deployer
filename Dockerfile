@@ -20,6 +20,10 @@ RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y rsync
 
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y mysql-client	
+
 VOLUME ["/project", "$HOME/.ssh"]
 WORKDIR /project
 
