@@ -1,4 +1,11 @@
-FROM php:7.4-apache
+FROM php:7.4-fpm
+
+ENV DEPLOYER_VERSION=6.3.0
+
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y openssh-client openssh sshpass
+	
 
 RUN curl -LO https://deployer.org/deployer.phar \
 	&& mv deployer.phar /usr/local/bin/dep \
