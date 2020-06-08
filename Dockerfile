@@ -1,8 +1,4 @@
-FROM php:7.4-fpm
-
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get install -y openssh-client
+FROM php:7.4-apache
 
 RUN curl -LO https://deployer.org/deployer.phar \
 	&& mv deployer.phar /usr/local/bin/dep \
