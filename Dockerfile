@@ -15,6 +15,10 @@ RUN curl -LO https://deployer.org/deployer.phar \
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y git
+	
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y rsync
 
 VOLUME ["/project", "$HOME/.ssh"]
 WORKDIR /project
